@@ -1,10 +1,21 @@
 # Django
 
 ## To create a project
+```bash
 
-- Install python3
-- Install django
-- django-admin startproject NAMEPROJECT .
+Install python3
+pip install django -U
+django-admin = to see the commands of django
+django-admin startproject NAMEPROJECT .
+```
+
+## To create venv
+
+```bash
+python3 -m venv NAMEVENV
+source NAMEVENV/bin/activate
+deactivate
+```
 
 ## Files that django create:
 
@@ -33,3 +44,8 @@
 - USE_L10N = translate
 - USE_TZ = timezone library
 - STATIC_URL = resolve whit the static file query
+
+## Commands
+
+- python3 manage.py = to see the commands of the manage and each application
+- python3 manage.py runserver = run the server
