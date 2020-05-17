@@ -10,9 +10,9 @@
 
 - __init.py__ = declare the project like a module of python
 - settings,py = define configuration of the project
-- [urls.py](http://urls.py) = file whit all urls of the project and redirect to the template
-- [wsgi.py](http://wsgi.py) = is the interface of the project when be in production
-- [manage.py](http://manage.py) = interface over the project
+- urls.py = file whit all urls of the project and redirect to the template
+- wsgi.py = is the interface of the project when be in production
+- manage.py = interface over the project
 
 ## settings-py
 
