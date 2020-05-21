@@ -5,43 +5,43 @@ For work with django is required have installed python3
 ## To create virtual envirnment (venv)
 
 For create a virtual environment
-```bash
+~~~bash
 python3 -m venv NAMEVENV
-```
+~~~
 Activate venv in linux
-```bash
+~~~bash
 source NAMEVENV/bin/activate
-```
+~~~
 Activate venv in windows
-```bash
+~~~bash
 NAMEVENV/Scipts/activate
-```
+~~~
 For deactivate venv
-```bash
+~~~bash
 deactivate
-```
+~~~
 ---
 ## To create a project
 
 To install django run in console
 
-```bash
+~~~bash
 pip install django -U
-```
+~~~
 
 ### Commands of django
 
 To see the commands of django
 
-```bash
+~~~bash
 django-admin
-```
+~~~
 
 To start a project
 
-```bash
+~~~bash
 django-admin startproject NAMEPROJECT .
-```
+~~~
 ---
 ## Files that django create:
 
@@ -73,10 +73,10 @@ django-admin startproject NAMEPROJECT .
 ---
 ## Commands
 To see the commands of the manage and each application
-```bash
+~~~bash
 manage.py
-```
+~~~
 Run the server
-```bash
+~~~bash
 manage.py runserver
-```
+~~~
