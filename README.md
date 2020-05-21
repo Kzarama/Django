@@ -1,31 +1,57 @@
 # Django
 
-## To create a project
-```bash
+For work with django is required have installed python3
 
-Install python3
-pip install django -U
-django-admin = to see the commands of django
-django-admin startproject NAMEPROJECT .
-```
+## To create virtual envirnment (venv)
 
-## To create venv
-
+For create a virtual environment
 ```bash
 python3 -m venv NAMEVENV
+```
+Activate venv in linux
+```bash
 source NAMEVENV/bin/activate
+```
+Activate venv in windows
+```bash
+NAMEVENV/Scipts/activate
+```
+For deactivate venv
+```bash
 deactivate
 ```
+---
+## To create a project
 
+To install django run in console
+
+```bash
+pip install django -U
+```
+
+### Commands of django
+
+To see the commands of django
+
+```bash
+django-admin
+```
+
+To start a project
+
+```bash
+django-admin startproject NAMEPROJECT .
+```
+---
 ## Files that django create:
 
-- __init.py__ = declare the project like a module of python
-- settings,py = define configuration of the project
+- init.py = declare the project like a module of python
+- settings.py = define configuration of the project
 - urls.py = file whit all urls of the project and redirect to the template
 - wsgi.py = is the interface of the project when be in production
 - manage.py = interface over the project
 
-## settings-py
+### Variables in settings-py
 
 - BASE_DIR = the path of the project
 - SECRET_KEY= for the passwords and sessions of db
@@ -44,8 +70,13 @@ deactivate
 - USE_L10N = translate
 - USE_TZ = timezone library
 - STATIC_URL = resolve whit the static file query
-
+---
 ## Commands
-
-- python3 manage.py = to see the commands of the manage and each application
-- python3 manage.py runserver = run the server
+To see the commands of the manage and each application
+```bash
+manage.py
+```
+Run the server
+```bash
+manage.py runserver
+```
