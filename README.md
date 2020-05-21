@@ -1,5 +1,7 @@
-# Django
+# django
+![](https://lh3.googleusercontent.com/proxy/UoarSfONT7Gwd19qXjXn6SHImsEu3Q3XMlCSTJLfNob1F7tiTOeITTi_qweMBdVgfhDyMwKyDciB30xGIYm6BHgyDCG8MgZQSs55XRAnj3Y0uiZLMDf1QpVaA6d9Glx0rFq4aI_x7-D1K30ppxWUCDaMNlhhPaP-N8epwM7v3ud_7qP2LYR7rZE)
 
+---
 For work with django is required have installed python3
 
 ## To create virtual envirnment (venv)
