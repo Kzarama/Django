@@ -23,3 +23,5 @@ and run in the bash
 ~~~bash
 manage.py runserver
 ~~~
+
+Then in the navigator go to [http://127.0.0.1:8000/hello-world](http://127.0.0.1:8000/hello-world) to see the webpage
