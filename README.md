@@ -14,7 +14,7 @@ source NAMEVENV/bin/activate
 ~~~
 Activate venv in windows
 ~~~bash
-NAMEVENV/Scipts/activate
+NAMEVENV/Scripts/activate
 ~~~
 For deactivate venv
 ~~~bash
