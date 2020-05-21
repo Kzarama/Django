@@ -17,5 +17,9 @@ from django.urls import path
 urlpatterns = [
     path('hello-world/', views.hello_world)
 ]
+~~~
 
+and run in the bash
+~~~bash
+manage.py runserver
 ~~~
