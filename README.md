@@ -1,11 +1,10 @@
 # django
-![](https://lh3.googleusercontent.com/proxy/UoarSfONT7Gwd19qXjXn6SHImsEu3Q3XMlCSTJLfNob1F7tiTOeITTi_qweMBdVgfhDyMwKyDciB30xGIYm6BHgyDCG8MgZQSs55XRAnj3Y0uiZLMDf1QpVaA6d9Glx0rFq4aI_x7-D1K30ppxWUCDaMNlhhPaP-N8epwM7v3ud_7qP2LYR7rZE)
+![](img/django.png)
 
 ---
+
 For work with django is required have installed python3
-
 ## To create virtual envirnment (venv)
-
 For create a virtual environment
 ~~~bash
 python3 -m venv NAMEVENV
@@ -22,39 +21,43 @@ For deactivate venv
 ~~~bash
 deactivate
 ~~~
+
 ---
+
 ## To create a project
-
 To install django run in console
-
 ~~~bash
 pip install django -U
 ~~~
-
 ### Commands of django
-
 To see the commands of django
-
 ~~~bash
 django-admin
 ~~~
-
 To start a project
-
 ~~~bash
 django-admin startproject NAMEPROJECT .
 ~~~
----
-## Files that django create:
 
+---
+
+## Application in django
+start application over a project
+~~~bash
+manage.py startapp NAME_APPLICATION
+~~~
+Install an application
+- In INSTALLED_APPS in setttings.py of the project add NAME_APPLICATION
+
+---
+
+## Files that django create:
 - init.py = declare the project like a module of python
 - settings.py = define configuration of the project
 - urls.py = file whit all urls of the project and redirect to the template
 - wsgi.py = is the interface of the project when be in production
-- manage.py = interface over the project
-
+- manage.py = interface over the project relationated with the settings of the project
 ### Variables in settings-py
-
 - BASE_DIR = the path of the project
 - SECRET_KEY= for the passwords and sessions of db
 - DEBUG = shows that the project is in development (debug mode)
@@ -72,7 +75,16 @@ django-admin startproject NAMEPROJECT .
 - USE_L10N = translate
 - USE_TZ = timezone library
 - STATIC_URL = resolve whit the static file query
+## Files created in a application
+- __init.py__ (migrations) = record the changes in the db
+- admin.py = registers the models in the administrator of django
+- apps.py = declare the configuration of the app 
+- models.py = define the models of data
+- test.py = for test
+- views.py = create the models
+
 ---
+
 ## Commands
 To see the commands of the manage and each application
 ~~~bash
