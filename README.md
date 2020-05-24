@@ -58,6 +58,36 @@ Install an application
 
 ---
 
+## Migrations
+Causes all changes to be saved in the db    
+~~~bash
+manage.py migrations
+~~~
+
+## Create a model (table of db)
+For create a table, have to create a class
+~~~python
+class User(models.Model):
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    email = models.EmailField(unique=True)
+    password = models.CharField(max_length=100)
+    birthdate = models.DateField(blank=True, null=True)
+    created = models.DateTimeField(auto_now_add=True)
+    modified = models.DateTimeField(auto_now=True)
+~~~
+
+To make migrations then of create a new model run
+
+~~~bash
+manage.py makemigrations
+~~~
+and this create a new file in migrations folder with the fields and the tables, then run 
+~~~bash
+manage.py migrate
+~~~
+---
+
 ## Files that django create:
 - init.py = declare the project like a module of python
 - settings.py = define configuration of the project
