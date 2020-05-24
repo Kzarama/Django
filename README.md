@@ -92,6 +92,11 @@ manage.py createsuperuser
 
 ---
 
+## Middleware
+validate a session of an user
+
+---
+
 ## Files that django create:
 - init.py = declare the project like a module of python
 - settings.py = define configuration of the project
