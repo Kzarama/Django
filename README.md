@@ -41,13 +41,20 @@ django-admin startproject NAMEPROJECT .
 
 ---
 
+## Templates
+make a new folder in the app
+
+- render = receive a request, the template
+
+---
+
 ## Application in django
 start application over a project
 ~~~bash
 manage.py startapp NAME_APPLICATION
 ~~~
 Install an application
-- In INSTALLED_APPS in setttings.py of the project add NAME_APPLICATION
+- In INSTALLED_APPS in settings.py of the project add NAME_APPLICATION
 
 ---
 
