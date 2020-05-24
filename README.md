@@ -42,13 +42,13 @@ django-admin startproject NAMEPROJECT .
 ---
 
 ## Templates
-make a new folder in the app
-
+Presentation of the data in HTML
+Make a new folder in the app
 - render = receive a request, the template
-
 ---
 
 ## Application in django
+Is a set of code that is responsible of a specific part of the project
 start application over a project
 ~~~bash
 manage.py startapp NAME_APPLICATION
@@ -58,34 +58,38 @@ Install an application
 
 ---
 
-## Migrations
-Causes all changes to be saved in the db    
-~~~bash
-manage.py migrations
-~~~
-
-## Create a model (table of db)
-For create a table, have to create a class
-~~~python
-class User(models.Model):
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
-    email = models.EmailField(unique=True)
-    password = models.CharField(max_length=100)
-    birthdate = models.DateField(blank=True, null=True)
-    created = models.DateTimeField(auto_now_add=True)
-    modified = models.DateTimeField(auto_now=True)
-~~~
-
-To make migrations then of create a new model run
-
+## DB
+django uses ORM(Object-Relational Mapping) for make the tables of the db, allow the access and control of a relational db through an abstraction of classes and objects  
+Models = part of the projects that structure the tables and the properties
+### Migrations
+Migrate changes
 ~~~bash
 manage.py makemigrations
 ~~~
-and this create a new file in migrations folder with the fields and the tables, then run 
+Causes all changes to be saved in the db    
 ~~~bash
 manage.py migrate
 ~~~
+Finally of migrate changes run migrate for save the changes in the db
+create 
+## Create a model user
+Run the shell of python
+~~~bash
+manage.py shell
+~~~
+import the model user of contrib
+~~~bash
+from django.contrib.auth.models import User
+~~~
+create a new user
+~~~bash
+user = User.objects.create_user(username='Kevin', password='123')
+~~~
+create a superuser
+~~~bash
+manage.py createsuperuser
+~~~
+
 ---
 
 ## Files that django create:
@@ -118,7 +122,7 @@ manage.py migrate
 - apps.py = declare the configuration of the app 
 - models.py = define the models of data
 - test.py = for test
-- views.py = create the models
+- views.py = is the responsible of business logic and allow the connection between the template and the models
 
 ---
 
@@ -130,4 +134,8 @@ manage.py
 Run the server
 ~~~bash
 manage.py runserver
+~~~
+shell of python with djangp
+~~~bash
+manage.py shell
 ~~~
