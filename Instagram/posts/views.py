@@ -5,7 +5,7 @@ posts = [
     {
         'title': 'Flowers',
         'user': {
-            'name': 'Nicole Kilby',
+            'name': 'Nicole',
             'picture': 'https://picsum.photos/60/60/?image=1027'
         },
         'timestamp': datetime.now().strftime('%b %dth, %Y - %H:%M hrs'),
@@ -41,4 +41,4 @@ posts = [
 ]
 
 def list_posts(request):
-    return render(request, 'feed.html', {'posts':posts})
+    return render(request, 'posts/feed.html', {'posts':posts})
