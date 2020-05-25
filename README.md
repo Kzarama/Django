@@ -93,7 +93,16 @@ manage.py createsuperuser
 ---
 
 ## Middleware
-validate a session of an user
+validate a session of an user, and allow modify the object request and response
+
+### Default middlewares
+- SecurityMiddleware = check security measures
+- SessionMiddleware = validate a session 
+- CommonMiddleware = verify debugs and common things of the framework
+- CsefViewMiddleware = verify the validation 
+- AuthenticationMiddleware = allow access data from all templates
+- MessageMiddleware = allow create messages for requests
+- XFrameOptionsMiddleware = manage the security
 
 ---
 
@@ -143,4 +152,8 @@ manage.py runserver
 shell of python with djangp
 ~~~bash
 manage.py shell
+~~~
+django comments
+~~~django
+{#comments#}
 ~~~
