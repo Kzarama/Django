@@ -17,7 +17,7 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user:
             login(request, user)
-            return redirect('feed')
+            return redirect('posts:feed')
         else:
             return render(request, 'users/login.html', {'error': 'Invalid username and password'})
     return render(request, 'users/login.html')
@@ -25,33 +25,22 @@ def login_view(request):
 @login_required
 def logout_view(request):
     logout(request)
-    return redirect('login')
+    return redirect('users:login')
 
 def signup(request):
     if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        password_confirmation = request.POST['password_confirmation']
-        
-        if password != password_confirmation:
-            return render(request, 'users/signup.html', {'error':'Password does not match'})
-        
-        try:
-            user = User.objects.create_user(username=username, password=password)
-        except IntegrityError:
-            return render(request, 'users/signup.html', {'error': 'Username is already used'})
-            
-        user.first_name = request.POST['first_name']
-        user.last_name = request.POST['last_name']
-        user.email = request.POST['email']
-        user.save()
+        form = SignupForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('users:login')
+    else:
+        form = SignupForm()
 
-        profile = Profile(user=user)
-        profile.save()
-
-        return redirect('login')
-
-    return render(request, 'users/signup.html')
+    return render(
+        request=request,
+        template_name='users/signup.html',
+        context={'form': form}
+    )
 
 @login_required
 def update_profile(request):
@@ -69,6 +58,7 @@ def update_profile(request):
             profile.save()
 
             return redirect('update_profile')
+
     else:
         form = ProfileForm()
 
@@ -76,8 +66,8 @@ def update_profile(request):
         request=request,
         template_name='users/update_profile.html',
         context={
-            'profile':profile,
-            'user':request.user,
-            'form':form
-            }
-        )
+            'profile': profile,
+            'user': request.user,
+            'form': form
+        }
+    )
