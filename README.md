@@ -24,6 +24,11 @@ deactivate
 
 ---
 
+## How pass parameters in the url
+
+
+---
+
 ## To create a project
 To install django run in console
 ~~~bash
