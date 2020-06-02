@@ -4,7 +4,7 @@
 ---
 
 For work with django is required have installed python3
-## To create virtual envirnment (venv)
+## To create virtual environment (venv)
 For create a virtual environment
 ~~~bash
 python3 -m venv NAMEVENV
@@ -115,8 +115,8 @@ validate a session of an user, and allow modify the object request and response
 - init.py = declare the project like a module of python
 - settings.py = define configuration of the project
 - urls.py = file whit all urls of the project and redirect to the template
-- wsgi.py = is the interface of the project when be in production
-- manage.py = interface over the project relationated with the settings of the project
+- wsgi.py = (web server gateway interface) is the interface of the project when be in production, is a protocol of calls of web server
+- manage.py = interface over the project related with the settings of the project
 ### Variables in settings-py
 - BASE_DIR = the path of the project
 - SECRET_KEY= for the passwords and sessions of db
@@ -154,11 +154,58 @@ Run the server
 ~~~bash
 manage.py runserver
 ~~~
-shell of python with djangp
+shell of python with django
 ~~~bash
 manage.py shell
 ~~~
 django comments
 ~~~django
 {#comments#}
+~~~
+
+---
+
+## Production of the project
+
+Django connect the project with any db engine, only have to change the database list in the settings. Django can use multiple db engines, but have to be one for default  
+for connect with the db engines use:
+- PostgreSQL: 'django.db.backends.postgresql’
+- MySQL: 'django.db.backends.mysql’
+- SQLite: 'django.db.backends.sqlite3’
+- Oracle: 'Django.db.backends.oracle’  
+
+And fill the other fields:
+- USER = with the user of the db
+- PASSWORD = with the password of the db
+- HOST = the path or the host of the db
+- PORT = the port used
+- ATOMIC_REQUEST = True (optional) = causes all queries to be in one transaction to the database  
+### Configure PostgreSQL
+Log in in postgres 
+~~~bash
+sudo su postgres
+~~~
+Start the shell of postgres
+~~~bash
+psql
+~~~
+Create a db
+~~~bash
+create database DATABASENAME
+~~~
+Create a user
+~~~bash
+create user NAMEUSER with password 'PASSWORD';
+~~~
+Give user permissions on the db
+~~~bash
+grant all privileges on database DATABASENAME to NAMEUSER;
+~~~
+close the shell of postgres with
+~~~bash
+\q
+~~~
+exit of the session of postgres
+~~~bash
+exit
 ~~~
