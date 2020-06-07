@@ -4,6 +4,7 @@
 ---
 
 For work with django is required have installed python3
+
 ## To create virtual environment (venv)
 For create a virtual environment
 ~~~bash
@@ -30,18 +31,22 @@ deactivate
 ---
 
 ## To create a project
-To install django run in console
+To install django run
 ~~~bash
 pip install django -U
+~~~
+To start a project
+~~~bash
+django-admin startproject NAMEPROJECT .
+~~~
+## To run a project 
+~~~bash
+python3 manage.py runserver
 ~~~
 ### Commands of django
 To see the commands of django
 ~~~bash
 django-admin
-~~~
-To start a project
-~~~bash
-django-admin startproject NAMEPROJECT .
 ~~~
 
 ---
@@ -50,6 +55,7 @@ django-admin startproject NAMEPROJECT .
 Presentation of the data in HTML
 Make a new folder in the app
 - render = receive a request, the template
+
 ---
 
 ## Application in django
@@ -66,17 +72,6 @@ Install an application
 ## DB
 django uses ORM(Object-Relational Mapping) for make the tables of the db, allow the access and control of a relational db through an abstraction of classes and objects  
 Models = part of the projects that structure the tables and the properties
-### Migrations
-Migrate changes
-~~~bash
-manage.py makemigrations
-~~~
-Causes all changes to be saved in the db    
-~~~bash
-manage.py migrate
-~~~
-Finally of migrate changes run migrate for save the changes in the db
-create 
 ## Create a model user
 Run the shell of python
 ~~~bash
