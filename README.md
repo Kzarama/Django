@@ -1,5 +1,12 @@
 # django
-![](img/django.png)
+![django](img/django.png)
+
+---
+
+More projects of django
+
+- [Backend of a carpooling project](https://github.com/Kzarama/Carpooling_django)
+- [Copy of instagram](https://github.com/Kzarama/instagram_django)
 
 ---
 
