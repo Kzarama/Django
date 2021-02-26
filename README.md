@@ -1,125 +1,162 @@
 # django
+
 ![django](img/django.png)
 
 ---
 
-More projects of django
+## More projects of django
 
 - [Backend of a carpooling project](https://github.com/Kzarama/Carpooling_django)
 - [Copy of instagram](https://github.com/Kzarama/instagram_django)
 
 ---
 
+# Content
+
+- [Starting with django](#Starting-with-django)
+- [Templates](#Templates)
+- [Application in django](#Application-in-django)
+- [DB](#DB)
+- [Create a model user](#Create-a-model-user)
+- [Middleware](#Middleware)
+- [Files that django create](#Files-that-django-create)
+- [Files created in a application](#Files-created-in-a-application)
+- [Commands](#Commands)
+- [Production of the project](#Production-of-the-project)
+
+---
+
 For work with django is required have installed python3
 
-## To create virtual environment (venv)
-For create a virtual environment
-~~~bash
-python3 -m venv NAMEVENV
-~~~
-Activate venv in linux
-~~~bash
-source NAMEVENV/bin/activate
-~~~
-Activate venv in windows
-~~~bash
-NAMEVENV/Scripts/activate
-~~~
-For deactivate venv
-~~~bash
-deactivate
-~~~
+# Starting with django
 
----
-
-## How pass parameters in the url
-
-
----
-
-## To create a project
 To install django run
-~~~bash
+
+```bash
 pip install django -U
-~~~
+```
+
 To start a project
-~~~bash
+
+```bash
 django-admin startproject NAMEPROJECT .
-~~~
-## To run a project 
-~~~bash
+```
+
+## To run a project
+
+```bash
 python3 manage.py runserver
-~~~
+```
+
 ### Commands of django
+
 To see the commands of django
-~~~bash
+
+```bash
 django-admin
-~~~
+```
 
----
+## To create virtual environment (venv)
 
-## Templates
+For create a virtual environment
+
+```bash
+python3 -m venv NAMEVENV
+```
+
+Activate venv in linux
+
+```bash
+source NAMEVENV/bin/activate
+```
+
+Activate venv in windows
+
+```bash
+NAMEVENV/Scripts/activate
+```
+
+For deactivate venv
+
+```bash
+deactivate
+```
+
+# Templates
+
 Presentation of the data in HTML
 Make a new folder in the app
+
 - render = receive a request, the template
 
----
+# Application in django
 
-## Application in django
 Is a set of code that is responsible of a specific part of the project
 start application over a project
-~~~bash
+
+```bash
 manage.py startapp NAME_APPLICATION
-~~~
+```
+
 Install an application
+
 - In INSTALLED_APPS in settings.py of the project add NAME_APPLICATION
 
----
+# DB
 
-## DB
 django uses ORM(Object-Relational Mapping) for make the tables of the db, allow the access and control of a relational db through an abstraction of classes and objects  
 Models = part of the projects that structure the tables and the properties
-## Create a model user
+
+# Create a model user
+
 Run the shell of python
-~~~bash
+
+```bash
 manage.py shell
-~~~
+```
+
 import the model user of contrib
-~~~bash
+
+```bash
 from django.contrib.auth.models import User
-~~~
+```
+
 create a new user
-~~~bash
+
+```bash
 user = User.objects.create_user(username='Kevin', password='123')
-~~~
+```
+
 create a superuser
-~~~bash
+
+```bash
 manage.py createsuperuser
-~~~
+```
 
----
+# Middleware
 
-## Middleware
 validate a session of an user, and allow modify the object request and response
 
-### Default middlewares
+## Default middlewares
+
 - SecurityMiddleware = check security measures
-- SessionMiddleware = validate a session 
+- SessionMiddleware = validate a session
 - CommonMiddleware = verify debugs and common things of the framework
-- CsefViewMiddleware = verify the validation 
+- CsefViewMiddleware = verify the validation
 - AuthenticationMiddleware = allow access data from all templates
 - MessageMiddleware = allow create messages for requests
 - XFrameOptionsMiddleware = manage the security
 
----
+# Files that django create
 
-## Files that django create:
 - init.py = declare the project like a module of python
 - settings.py = define configuration of the project
 - urls.py = file whit all urls of the project and redirect to the template
 - wsgi.py = (web server gateway interface) is the interface of the project when be in production, is a protocol of calls of web server
 - manage.py = interface over the project related with the settings of the project
-### Variables in settings-py
+
+## Variables in settings-py
+
 - BASE_DIR = the path of the project
 - SECRET_KEY= for the passwords and sessions of db
 - DEBUG = shows that the project is in development (debug mode)
@@ -137,77 +174,100 @@ validate a session of an user, and allow modify the object request and response
 - USE_L10N = translate
 - USE_TZ = timezone library
 - STATIC_URL = resolve whit the static file query
-## Files created in a application
-- __init.py__ (migrations) = record the changes in the db
+
+# Files created in a application
+
+- init.py (migrations) = record the changes in the db
 - admin.py = registers the models in the administrator of django
-- apps.py = declare the configuration of the app 
+- apps.py = declare the configuration of the app
 - models.py = define the models of data
 - test.py = for test
 - views.py = is the responsible of business logic and allow the connection between the template and the models
 
----
+# Commands
 
-## Commands
 To see the commands of the manage and each application
-~~~bash
+
+```bash
 manage.py
-~~~
+```
+
 Run the server
-~~~bash
+
+```bash
 manage.py runserver
-~~~
+```
+
 shell of python with django
-~~~bash
+
+```bash
 manage.py shell
-~~~
+```
+
 django comments
-~~~django
+
+```django
 {#comments#}
-~~~
+```
 
----
-
-## Production of the project
+# Production of the project
 
 Django connect the project with any db engine, only have to change the database list in the settings. Django can use multiple db engines, but have to be one for default  
 for connect with the db engines use:
+
 - PostgreSQL: 'django.db.backends.postgresql’
 - MySQL: 'django.db.backends.mysql’
 - SQLite: 'django.db.backends.sqlite3’
-- Oracle: 'Django.db.backends.oracle’  
+- Oracle: 'Django.db.backends.oracle’
 
 And fill the other fields:
+
 - USER = with the user of the db
 - PASSWORD = with the password of the db
 - HOST = the path or the host of the db
 - PORT = the port used
-- ATOMIC_REQUEST = True (optional) = causes all queries to be in one transaction to the database  
-### Configure PostgreSQL
-Log in in postgres 
-~~~bash
+- ATOMIC_REQUEST = True (optional) = causes all queries to be in one transaction to the database
+
+## Configure PostgreSQL
+
+Log in in postgres
+
+```bash
 sudo su postgres
-~~~
+```
+
 Start the shell of postgres
-~~~bash
+
+```bash
 psql
-~~~
+```
+
 Create a db
-~~~bash
+
+```bash
 create database DATABASENAME
-~~~
+```
+
 Create a user
-~~~bash
+
+```bash
 create user NAMEUSER with password 'PASSWORD';
-~~~
+```
+
 Give user permissions on the db
-~~~bash
+
+```bash
 grant all privileges on database DATABASENAME to NAMEUSER;
-~~~
+```
+
 close the shell of postgres with
-~~~bash
+
+```bash
 \q
-~~~
+```
+
 exit of the session of postgres
-~~~bash
+
+```bash
 exit
-~~~
+```
